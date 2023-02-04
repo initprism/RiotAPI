@@ -71,7 +71,7 @@ instance FromJSON MaintenanceStatus where
     "scheduled"   -> pure Scheduled
     "in_progress" -> pure InProgress
     "complete"    -> pure Complete
-    _             -> undefined
+    _             -> error "Failed to parse MaintenanceStatus"
 
 instance ToJSON MaintenanceStatus where
   toJSON Scheduled  = "scheduled"
@@ -88,7 +88,7 @@ instance FromJSON IncidentSeverity where
     "info"     -> pure Info
     "warning"  -> pure Warning
     "critical" -> pure Critical
-    _          -> undefined
+    _          -> error "Failed to parse IncidentSeverity"
 
 instance ToJSON IncidentSeverity where
   toJSON Info     = "info"

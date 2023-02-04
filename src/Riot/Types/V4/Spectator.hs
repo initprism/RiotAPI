@@ -282,7 +282,7 @@ instance FromJSON GameMode where
     "ASCENSION"  -> pure ASCENSION
     "FIRSTBLOOD" -> pure FIRSTBLOOD
     "KINGPORO"   -> pure KINGPORO
-    _            -> undefined
+    _            -> error "Failed to parse GameMode"
 
 instance ToJSON GameMode where
   toJSON CLASSIC    = "CLASSIC"
@@ -304,7 +304,7 @@ instance FromJSON GameType where
     "CUSTOM_GAME"   -> pure CUSTOM_GAME
     "MATCHED_GAME"  -> pure MATCHED_GAME
     "TUTORIAL_GAME" -> pure TUTORIAL_GAME
-    _               -> undefined
+    _               -> error "Failed to parse GameType"
 
 instance ToJSON GameType where
   toJSON CUSTOM_GAME   = "CUSTOM_GAME"
