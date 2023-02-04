@@ -1,0 +1,51 @@
+name:                RiotAPI
+version:             0.1.0.0
+github:              "initprism/RiotAPI"
+license:             BSD3
+author:              "KimTaein"
+maintainer:          "initprism@gmail.com"
+copyright:           "2023 KimTaein"
+
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.7 && < 5
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Riot
+  - Riot.Types
+  - Riot.Types.V4
+  - Riot.Types.V4.PlatformData
+  - Riot.Types.V4.Summoner
+  dependencies:
+  - aeson
+  - vector
+  - text
+  - containers
+  - bytestring
+  - transformers  
+
+tests:
+  RiotAPI-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - RiotAPI
