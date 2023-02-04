@@ -29,10 +29,12 @@ library:
   - Riot
   - Riot.Types
   - Riot.Types.V4
-  - Riot.Types.V4.PlatformData
+  - Riot.Types.V4.LoLStatus
   - Riot.Types.V4.Summoner
   dependencies:
   - aeson
+  - deepseq
+  - hashable
   - vector
   - text
   - containers
